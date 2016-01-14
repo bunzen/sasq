@@ -1,3 +1,6 @@
+// sasq (Shadowserver AS Query) is a small library to
+// query the Shadowserver IP-BGP Whois database; using the
+// bulk query API
 package sasq
 
 import (
@@ -8,6 +11,8 @@ import (
 	"strings"
 )
 
+// QueryWhois resolves a list of IP-addresses into
+// AS number with information.
 func QueryWhois(addresses []string) []ASRecord {
 	ret := []ASRecord{}
 
@@ -19,7 +24,7 @@ func QueryWhois(addresses []string) []ASRecord {
 	}
 	defer conn.Close()
 
-	fmt.Fprintf(conn, WrapQuery(addresses))
+	fmt.Fprintf(conn, wrapQuery(addresses))
 	reader := bufio.NewReader(conn)
 	line, err := reader.ReadString('\n')
 	if err != nil {
@@ -51,7 +56,7 @@ func QueryWhois(addresses []string) []ASRecord {
 	return ret
 }
 
-func WrapQuery(address []string) string {
+func wrapQuery(address []string) string {
 	query := "begin origin\n"
 	query += strings.Join(address, "\n")
 	query += "\nend\n"

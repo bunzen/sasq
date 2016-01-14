@@ -7,6 +7,9 @@ import (
 	"strings"
 )
 
+// ASRecord is the return struct of the QueryWhois with
+// all the fields stored in the Shadowserver IP-BGP whois
+// database
 type ASRecord struct {
 	Query  string    `json:"query"`
 	ASN    int       `json:"asn"`

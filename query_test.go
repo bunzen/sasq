@@ -50,7 +50,7 @@ func TestDownload(t *testing.T) {
 }
 
 func TestWrap(t *testing.T) {
-	wrap := WrapQuery([]string{"94.39.45.09"})
+	wrap := wrapQuery([]string{"94.39.45.09"})
 	if !strings.HasPrefix(wrap, "begin origin\n") {
 		t.Fail()
 	}
