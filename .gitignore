@@ -1,0 +1,7 @@
+*.elc
+*~
+*.swp
+*.core
+.zedstate
+are
+*.txt
