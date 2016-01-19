@@ -20,6 +20,8 @@ type ASRecord struct {
 	ISP    string    `json:"isp"`
 }
 
+// parse_line is a helper function that takes one line of
+// shadowserver return data and parses it into a valid ASRecord
 func parse_line(line string) (*ASRecord, error) {
 	elems := strings.Split(line, " | ")
 	_, ipnet, err := net.ParseCIDR(elems[2])
