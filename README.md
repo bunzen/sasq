@@ -5,7 +5,7 @@ A Go library designed to work with the Shadowserver IP-BGP service API.
 ## Usage
 
 
-```golang
+```go
 package main
 
 import "github.com/bunzen/sasq"
