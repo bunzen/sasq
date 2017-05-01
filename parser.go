@@ -14,7 +14,6 @@ type ASRecord struct {
 	Prefix string `json:"prefix"`
 	Name   string `json:"name"`
 	CC     string `json:"cc"`
-	Domain string `json:"domain"`
 	ISP    string `json:"isp"`
 }
 
@@ -34,6 +33,5 @@ func parse_line(line string) (*ASRecord, error) {
 		strings.TrimSpace(elems[3]),
 		strings.TrimSpace(elems[4]),
 		strings.TrimSpace(elems[5]),
-		strings.TrimSpace(elems[6]),
 	}, nil
 }

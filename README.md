@@ -22,6 +22,6 @@ func main() {
 
 ## License
 
-Copyright © 2015 Geir Skjotskift <geir@pogostick.net>
+Copyright © 2015,2017 Geir Skjotskift <geir@pogostick.net>
 
 Distributed under the 2-Clause BSD License

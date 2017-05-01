@@ -15,7 +15,6 @@ func TestOutputDownload(t *testing.T) {
 		fmt.Printf("Prefix : %v\n", val.Prefix)
 		fmt.Printf("Name   : %v\n", val.Name)
 		fmt.Printf("CN     : %v\n", val.CC)
-		fmt.Printf("Domain : %v\n", val.Domain)
 		fmt.Printf("ISP    : %v\n", val.ISP)
 		fmt.Println("--------------------")
 	}
@@ -28,10 +27,7 @@ func TestDownload(t *testing.T) {
 	if text[0].Query != "94.39.45.09" {
 		t.Fail()
 	}
-	if text[0].Prefix.IP.String() != "94.36.0.0" {
-		t.Fail()
-	}
-	if text[0].Prefix.Mask.String() != "fffc0000" {
+	if text[0].Prefix != "94.36.0.0/14" {
 		t.Fail()
 	}
 	if text[0].Name != "TISCALI" {
@@ -41,10 +37,7 @@ func TestDownload(t *testing.T) {
 	if text[0].CC != "IT" {
 		t.Fail()
 	}
-	if text[0].Domain != "tiscali.it" {
-		t.Fail()
-	}
-	if text[0].ISP != "Tiscalinet" {
+	if text[0].ISP != ", IT" {
 		t.Fail()
 	}
 }
